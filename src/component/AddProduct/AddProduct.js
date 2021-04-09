@@ -10,9 +10,10 @@ const AddProduct = () => {
     const onSubmit = data => {
        const productData = {
            name:data.name,
+           price:data.price,
            imageURL: imageURL
        };
-       const url= `http://localhost:5500/addProduct` 
+       const url= `https://cherry-pudding-96348.herokuapp.com/` 
        
       
        fetch(url,{
@@ -50,6 +51,8 @@ const AddProduct = () => {
     <form onSubmit={handleSubmit(onSubmit)}>
 
    <input name="name" defaultValue="New product" ref={register} />
+   <br/>
+   <input name="price" defaultValue="price" ref={register} />
    <br/>
   <input name="exampleRequired" type="file" onChange={handleImageUpload} />
   <br/>

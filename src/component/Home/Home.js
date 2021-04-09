@@ -9,6 +9,11 @@ const Home = () => {
         fetch('https://cherry-pudding-96348.herokuapp.com/products')
         .then(res => res.json())
         .then(data => setProducts(data))
+        .catch((error)=>
+        console.log(error));
+
+
+        
 
     },[])
     
@@ -17,7 +22,7 @@ const Home = () => {
         <div >
             <h1>Gadget Shop</h1>
            {
-               products.map(product => <Product product={product}></Product>)
+               products.map(product => <Product product={product} ></Product>)
                
               
            }
